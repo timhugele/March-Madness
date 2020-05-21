@@ -16,7 +16,7 @@
 * [Modeling_Notebook_2.ipynb](https://github.com/timhugele/March-Madness/blob/master/Modeling_Notebook_2.ipynb)
 
 ### Project Presentation
-* [Canva Slides](https://www.canva.com/create/presentations/)
+* [Canva Slides](https://www.canva.com/design/DAD85iul94o/FQuRIMB4pS5TayYje1qctQ/view?utm_content=DAD85iul94o&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
 
 
 ### Problem Summary
