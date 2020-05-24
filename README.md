@@ -50,7 +50,7 @@ The first thing that I did after deciding on my project was to look at what othe
 
 **Obtain Data/Clean Data**
  
- The next step I took was to obtain the data that I wanted to use for my project. Fortunately, much of the data that I wanted to use was made easily available on the Kaggle competition page. The dataset of the utmost importance was the dataset that contained the outcomes of NCAA Tournament games, along with all of the traditional boxscore statistics for those games. I also wanted to use the same type of data from regular season games in order to base my tournament predictions on how the teams performed during the regular season. Kaggle also provided data on tournament seeds, the location of where each tournament game was played, different spellings of team names, and the conferences that each team played in. I engineered features using all of the previously listed data. 
+ The next step I took was to obtain the data that I wanted to use for my project. Fortunately, much of the data that I wanted to use was made easily available on the Kaggle competition page. The dataset of the utmost importance was the dataset that contained the outcomes of NCAA Tournament games, along with all of the traditional boxscore statistics for those games. I also wanted to use the same type of data from regular season games in order to base my tournament predictions on how the teams performed during the regular season. Kaggle also provided data on tournament seeds, the location of where each tournament game was played, different spellings of team names, massey ordinals, and the conferences that each team played in. I engineered features using all of the previously listed data. 
  
  I also obtained some data from outside sources. One dataset that I was eager to use was from Kenpom.com. This is a website that provides advanced college basketball analytics, however the data that I wanted to use was behind a paywall. Fortunately, a user on Kaggle posted much of the data that I wanted to use. I also turned to Kaggle users to provide data on the latitudes, longitudes, and elevations of the cities where the tournament games were played and also the cities and towns that each university was located in. 
  
@@ -60,7 +60,20 @@ The first thing that I did after deciding on my project was to look at what othe
  
  **Feature Engineering**
  
- Most of the work that I did on this project was the feature engineering step, resulting in dozens of features. The largest share of features came from finding season averages for each team. In order to do this I used the data comprising box score statistics for every game for every team and finding the season averages for each of those statistics. 
+ Most of the work that I did on this project was the feature engineering step, resulting in dozens of features. The largest share of features came from finding season averages for each team. In order to do this I used the data comprising box score statistics for every game for every team and finding the season averages for each of those statistics. This includes statistics like defensive rebounds, offensive rebounds, blocked shots, steals, free throws made, free throws attempted, etc. In addition to these I created features for:
+ * Wins over the last 15 days of the regular season
+ * Tournament Seed
+ * Kenpom stastistics (adjusted offensive and defensive efficiency, adjusted net efficiency, and a measure for luck)
+ * Win/loss target feature (1 if team 1 won the game, 0 if team 1 lost)
+ * Number of wins against top 25 teams, with the top 25 being determined by adjusted net efficiency
+ * Massey Ordinals. The dataset includes a large number of rating systems and each team's ratings throughout the season. I found which rating systems were the best predictors of outcomes and took the top 4 and averaged their results.
+ * TrueSkill rating. This is a rating system developed by microsoft to be used in their video games to determine team and player quality. 
+ * Each teams traveling distance from the college's hometown to the location where the game is played.
+ * The difference in elevation between a college's hometown and the game location.
+ 
+ I also created a seperate dataset for 2019 data which included all of the previously mentioned features.
+ 
+ I then had to merge each feature onto the original dataframe.
 
 ### Models
 I used a combination of two models for my final results. I used both a Logistic Regression and an XGBoost Classification model. After 
