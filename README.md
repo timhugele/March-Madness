@@ -43,8 +43,14 @@ This metric is useful because it is very easy to understand and gives you the mo
 logloss metric would still be useful, because ideally I would like my predictions to have a high degree of confidence.
 
 ### Process
-* Obtain Data/Clean Data
- The first step I took was to obtain the data that I wanted to use for my project. Fortunately, much of the data that I wanted to use was made easily available on the Kaggle competition page. The dataset of the utmost importance was the dataset that contained the outcomes of NCAA Tournament games, along with all of the traditional boxscore statistics for those games. I also wanted to use the same type of data from regular season games in order to base my tournament predictions on how the teams performed during the regular season. Kaggle also provided data on tournament seeds, the location of where each tournament game was played, different spellings of team names, and the conferences that each team played in. I engineered features using all of the previously listed data. 
+
+**Research**
+
+The first thing that I did after deciding on my project was to look at what others had done. Due to this being an annual Kaggle competition there were numerous notebooks that others had posted laying out how they approached this problem. I was fortunate to have access to so many different ideas and I ended up taking ideas from a few different notebooks and incorporating them into my project. I listed the notebooks that I used at the bottom of this page.
+
+**Obtain Data/Clean Data**
+ 
+ The next step I took was to obtain the data that I wanted to use for my project. Fortunately, much of the data that I wanted to use was made easily available on the Kaggle competition page. The dataset of the utmost importance was the dataset that contained the outcomes of NCAA Tournament games, along with all of the traditional boxscore statistics for those games. I also wanted to use the same type of data from regular season games in order to base my tournament predictions on how the teams performed during the regular season. Kaggle also provided data on tournament seeds, the location of where each tournament game was played, different spellings of team names, and the conferences that each team played in. I engineered features using all of the previously listed data. 
  
  I also obtained some data from outside sources. One dataset that I was eager to use was from Kenpom.com. This is a website that provides advanced college basketball analytics, however the data that I wanted to use was behind a paywall. Fortunately, a user on Kaggle posted much of the data that I wanted to use. I also turned to Kaggle users to provide data on the latitudes, longitudes, and elevations of the cities where the tournament games were played and also the cities and towns that each university was located in. 
  
@@ -52,8 +58,9 @@ logloss metric would still be useful, because ideally I would like my prediction
  
  Fortunately, most of the data was relatively clean, so asside from having to scrape and manually add a small amount of data I did not have to do much additional data cleaning.
  
- * Engineer Features
+ **Feature Engineering**
  
+ Most of the work that I did on this project was the feature engineering step, resulting in dozens of features. The largest share of features came from finding season averages for each team. In order to do this I used the data comprising box score statistics for every game for every team and finding the season averages for each of those statistics. 
 
 ### Models
 I used a combination of two models for my final results. I used both a Logistic Regression and an XGBoost Classification model. After 
