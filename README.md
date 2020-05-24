@@ -43,6 +43,17 @@ This metric is useful because it is very easy to understand and gives you the mo
 logloss metric would still be useful, because ideally I would like my predictions to have a high degree of confidence.
 
 ### Process
+* Obtain Data/Clean Data
+ The first step I took was to obtain the data that I wanted to use for my project. Fortunately, much of the data that I wanted to use was made easily available on the Kaggle competition page. The dataset of the utmost importance was the dataset that contained the outcomes of NCAA Tournament games, along with all of the traditional boxscore statistics for those games. I also wanted to use the same type of data from regular season games in order to base my tournament predictions on how the teams performed during the regular season. Kaggle also provided data on tournament seeds, the location of where each tournament game was played, different spellings of team names, and the conferences that each team played in. I engineered features using all of the previously listed data. 
+ 
+ I also obtained some data from outside sources. One dataset that I was eager to use was from Kenpom.com. This is a website that provides advanced college basketball analytics, however the data that I wanted to use was behind a paywall. Fortunately, a user on Kaggle posted much of the data that I wanted to use. I also turned to Kaggle users to provide data on the latitudes, longitudes, and elevations of the cities where the tournament games were played and also the cities and towns that each university was located in. 
+ 
+ My final data collection step was to obtain data that was missing from the previously mentioned datasets. One such dataset was the one containing game locations. The dataset only went back to 2010 while I was hoping to use data going back to 2003. Therefore, I scraped the remaining game locations from [basketball-reference.com](https://www.basketball-reference.com/). I was also missing data on the latitudes, longitudes, and elevations of some of the cities in my datasets, and due to the low number of missing values I decided to enter in the values manually. 
+ 
+ Fortunately, most of the data was relatively clean, so asside from having to scrape and manually add a small amount of data I did not have to do much additional data cleaning.
+ 
+ * Engineer Features
+ 
 
 ### Models
 I used a combination of two models for my final results. I used both a Logistic Regression and an XGBoost Classification model. After 
@@ -60,7 +71,10 @@ model and the XGBoost model.
 ### Initial Results
 * Best model picks 55 winners correctly, missing 12 for an accuracy of 0.82, with a log loss of 0.41.
 
-### Process Steps
+### Reproduction Instructions
+The first step in reproducing my results would be to obtain the data. I have attached all the data that I used in my project in a folder labeled data. However, if someone wished to use my notebook for the 2021 NCAA Tournament they would need to get an updated dataset. The first place to look would be Kaggle, where they host a competition every year to predict the tournament outcomes. I also attained the Kenpom data from a user on Kaggle, so in order to get updated Kenpom data you would either need to find another user who had posted this data or scrape it from the Kenpom website. 
+
+Once all data is obtained next step is feature engineering. To reproduce the results that I produced I would recommend running my notebooks in the following order; Data Preparation, Massey Ordinals, TrueSkill, and Game Location. Finally, the last step would be to run Modeling Notebook 2. 
 
 ### Next Steps
   I would like to try predicting on all college basketball games for the past few years, instead of predicting on season averages dating 
