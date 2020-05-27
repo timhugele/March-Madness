@@ -22,7 +22,7 @@ Additional data for this project was obtained from Kaggle users and from website
   * This notebook contains all of the modeling work that I conducted for this project. Some additional feature engineering is also contained in this notebook.
 
 ### Project Presentation
-* [Canva Slides](https://www.canva.com/design/DAD85iul94o/FQuRIMB4pS5TayYje1qctQ/view?utm_content=DAD85iul94o&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+* [Google Slides](https://docs.google.com/presentation/d/1liFjM5xYvqdQNxZi9qKMhB44Lz-C2MYtIOs1EvtKDK0/edit?usp=sharing)
 
 
 ### Problem Summary
